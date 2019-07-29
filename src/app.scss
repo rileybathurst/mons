@@ -1,7 +1,606 @@
+$primary: #F7857C;
+$secondary: #455548;
+$light: #E6E2E3;
+$dark: #727272;
+
+$primary-border:  2px solid $primary;
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+html,
+body,
+div,
+header,
+main,
+section,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
 .screen-reader {
   display: none;
 }
 
-body {
-  background: white;
+header {
+  display: grid;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+.logo {
+  grid-row: 1;
+  grid-column: 1;
+
+  display: grid;
+
+  .primary-logo {
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 9;
+  }
+
+  .logo-backer {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+.primary-logo {
+  width: 8em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  margin-left: 2em;
+  margin-right: 4em;
+}
+
+.primary-menu {
+  grid-row: 1;
+  grid-column: 2;
+  color: $dark;
+}
+
+.primary-menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin-top: 2em;
+}
+
+.primary-menu a {
+  color: $secondary;
+}
+
+.em-right {
+  margin-right: 1em;
+}
+
+.menu {
+  align-self: end;
+  margin-top: -2em;
+  display: grid;
+
+  div,
+  a {
+    grid-row: 1;
+    grid-column: 1;
+  }
+}
+
+.skewer {
+  background: $secondary;
+  padding: 2em;
+  transform: skewX(-45deg);
+}
+
+.menu a {
+  color: white;
+  z-index: 99;
+  place-self: center;
+  padding: 2em;
+}
+
+.max-40 {
+  @media (max-width: 40em) {
+    display: none;
+  }
+}
+
+.max-50 {
+  @media (max-width: 50em) {
+    display: none;
+  }
+}
+
+.title {
+  display: grid;
+  max-width: 44em;
+  margin: 2em auto;
+
+  h2 {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
+    justify-self: start;
+    margin-left: 1.5em;
+    color: white;
+  }
+
+  div {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  svg {
+    grid-row: 1;
+    grid-column: 2;
+    place-self: center;
+  }
+}
+
+.skewed {
+  background: $primary;
+  padding: 2em;
+  transform: skewX(-45deg);
+  z-index: -1;
+}
+
+.price {
+  color: $dark;
+  max-width: 44em;
+  margin: 2em auto;
+//  padding-left: 10em;
+}
+
+main {
+  color: $dark;
+}
+
+.parent {
+  width: 100%;
+  height: 44em;
+  overflow-x: scroll;
+  white-space: nowrap;
+
+  // could do with a scroll snap on the X
+}
+
+.carousel {
+//  margin: 0 auto; not working Id like to start in the center of the carousel
+}
+
+.carousel img {
+  height: 43em;
+}
+
+.crumbs {
+  display: grid;
+  grid-template-columns: 2em 1fr 2em;
+}
+
+.breadcrumbs {
+  writing-mode: vertical-rl;
+  writing-mode: sideways-lr;
+  grid-row: 1;
+  color: $primary;
+  font-weight: lighter;
+  justify-self: start;
+
+  p {
+    margin: 0;
+  }
+}
+
+.early {
+  grid-column: 1;
+}
+
+.late {
+  grid-column: 3;
+  margin-bottom: 1em;
+
+  p {
+    margin-left: 1em;
+  }
+}
+
+.loaf {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.crosses {
+  max-width: 24em;
+  margin: 3em auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.sizes {
+  max-width: 24em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.25em;
+}
+
+.sizes li {
+  border: 2px solid $primary;
+  list-style: none;
+  display: grid;
+  place-self: center;
+}
+
+.sizes li a {
+  text-decoration: none;
+  color: $primary;
+  padding: 1em;
+}
+
+.chart a {
+  padding: 0.5em !important;
+}
+
+.current,
+.filled {
+  background: $primary;
+}
+
+.current,
+.current a,
+.filled,
+.filled a {
+  color: white !important;
+}
+
+.add-cart {
+  display: grid;
+  margin: 3em auto;
+  max-width: 44em;
+//  grid-auto-columns: min-content;
+  color: $primary;
+
+  div,
+  h3 {
+    grid-row: 1;
+  }
+
+  .skew-1 {
+    grid-column: 1;
+    border: $primary-border;
+    transform: skewX(-45deg);
+  }
+
+  .quantity {
+    grid-column: 1;
+    place-self: center;
+  }
+
+  .skew-2 {
+    grid-column: 2;
+    border: $primary-border;
+    transform: skewX(-45deg);
+  }
+
+  .shape {
+    grid-column: 2;
+    place-self: center;
+  }
+
+  .skewed {
+    grid-column: 3;
+  }
+
+  .add {
+    grid-column: 3;
+    color: white;
+    place-self: center;
+  }
+}
+
+.measure {
+  max-width: 44em;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.sla {
+  display: grid;
+
+  .slash,
+  h3,
+  h4 {
+    grid-row: 1;
+    grid-column: 1;
+    align-items: center;
+  }
+}
+
+.features li {
+  color: $primary;
+  list-style-image: url("/static/cross.svg");
+}
+
+#promo {
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 3fr 1fr 1fr;
+  max-width: 64em;
+  margin: 1em auto;
+
+  .pre {
+    grid-row: 1;
+    grid-column: 1/3;
+    justify-self: center;
+    z-index: 99;
+  }
+
+  .erp {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: start;
+  }
+
+  .mid {
+    grid-row: 1;
+    grid-column: 2/6;
+    background: $secondary;
+    z-index: -1;
+  }
+
+  .tsop {
+    grid-row: 1;
+    grid-column: 5;
+    align-self: end;
+  }
+
+  .post {
+    grid-row: 1;
+    grid-column: 5/7;
+    align-self: end;
+    justify-self: center;
+  }
+}
+
+#promo h3 {
+  grid-row: 1;
+  grid-column: 2/4;
+  align-self: end;
+  padding-left: 2em;
+  padding-right: 2em;
+  z-index: 99;
+}
+
+#promo h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+#promo .poster {
+  grid-row: 1;
+  grid-column: 4/6;
+  margin: 1em;
+}
+
+.poster img {
+  max-width: 100%;
+}
+
+#tech {
+  background: $light;
+  margin-top: 3em;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.technologies {
+  display: grid;
+  //grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+}
+
+.technologies div {
+  display: grid;
+  margin-bottom: 3em;
+
+  img,
+  svg {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  img {
+    z-index: 9;
+  }
+}
+
+.circles {
+  transform: rotate(-90deg);
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 10em;
+
+  align-self: start;
+}
+
+.seas {
+  transform: rotate(-60deg) !important;
+}
+
+#fabric {
+  display: grid;
+  color: $primary;
+  align-items: center;
+  justify-items: center;
+  font-size: 1.25em;
+
+  h5 {
+    z-index: 9;
+  }
+
+  .merino {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .moisture {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: end;
+  }
+
+  .comfortable {
+    grid-row: 2;
+    grid-column: 2;
+    align-self: end;
+    margin: 0;
+  }
+
+  .regulates {
+    grid-row: 2;
+    grid-column: 3;
+    align-self: end;
+  }
+
+  .surface {
+    grid-row: 3;
+    grid-column: 2;
+    justify-items: end;
+  }
+}
+
+#fabric img {
+  grid-row: 1/4;
+  grid-column: 1/4;
+  max-width: 100%;
+}
+
+#also {
+  background: $dark;
+  color: white;
+}
+
+.also-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 3em;
+  margin: 0 auto;
+}
+
+.also-products article {
+  display: grid;
+}
+
+.also-products article div {
+  background: $light;
+  padding: 1em;
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.also-products article svg {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+
+.also-products article img {
+  max-width: 100%;
+  grid-row: -1;
+  grid-column: 1;
+}
+
+.clip {
+  align-self: end;
+  justify-self: end;
+  grid-row: 2 !important;
+  z-index: 9;
+}
+
+footer {
+  background: black;
+  color: white;
+  padding-bottom: 3em;
+}
+
+.footer-logo {
+  width: 8em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  margin-left: 2em;
+  margin-right: 4em;
+}
+
+footer .blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  margin: 0 auto;
+
+  section {
+    display: grid;
+    grid-template-columns: 5em 1fr;
+    margin-bottom: 4em;
+
+    h3 {
+      writing-mode: vertical-rl;
+      writing-mode: sideways-lr;
+      grid-row: 1;
+    }
+
+    ul,
+    form {
+      grid-row: 1;
+      align-self: end;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+footer form {
+  display: grid;
+  width: 66%;
+
+  input {
+    width: 100%;
+    padding: 1em 0;
+    margin: 0;
+  }
+  button {
+    grid-row: 2;
+    grid-column: 1;
+    margin: 0;
+    padding: 0;
+
+    background: $primary;
+    color: white;
+    width: 100%;
+    border: $primary-border;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  svg {
+    grid-row: 2;
+    grid-column: 1;
+  }
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer h4 {
+  margin-left: 3em;
 }

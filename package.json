@@ -2,9 +2,8 @@
   "name": "mons",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel watch index.html",
+    "start": "parcel index.html",
     "dev": "parcel index.html",
     "build": "parcel build --no-minify index.html"
   },
@@ -12,9 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^6.0.1",
-    "parcel": "^2.0.0-beta.3.1",
-    "parcel-bundler": "^1.9.4",
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.0.0",
     "posthtml": "^0.11.6",
     "sass": "^1.35.2"
   }

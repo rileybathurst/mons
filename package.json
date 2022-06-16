@@ -1,14 +1,21 @@
 {
   "name": "mons",
   "version": "1.0.0",
-  "description": "",
+  "description": "mons royale website concept",
+  "private": true,
+  "homepage": "https://mons-riley.netlify.app",
+  "repository": "github:rileybathurst/mons",
   "scripts": {
     "start": "parcel index.html",
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Riley Bathurst",
+    "email": "riley@rileybathurst.com",
+    "url": "https://rileybathurst.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.2.1",
